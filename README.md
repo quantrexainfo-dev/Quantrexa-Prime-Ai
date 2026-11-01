@@ -86,6 +86,24 @@ Quantrexa Prime AI is designed to bring multiple digital capabilities together, 
 - Privacy-focused Chat Experience
 - Secure Communication Features
 
+## 🧠 Quantrexa-Prime-1.5B — Open-Source AI Model
+
+Quantrexa-Prime-1.5B is an open-source, fine-tuned artificial intelligence text-generation model developed by **Purav Raj**.
+
+- **Model:** Quantrexa-Prime-1.5B
+- **Developer:** purav-raj321
+- **Platform:** Hugging Face
+- **License:** Apache License 2.0
+- **Category:** Fine-tuned text-generation model
+
+### Model Repository
+
+Explore the model, its documentation, configuration and available files:
+
+https://huggingface.co/purav-raj321/Quantrexa-Prime-1.5B
+
+The model is distributed under the Apache-2.0 license, subject to the license terms and any applicable third-party component notices.
+
 *Privacy and security capabilities depend on the actual implementation and available protections.*
 ---
 
