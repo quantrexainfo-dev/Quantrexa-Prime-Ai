@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b18">
+<title>Trust Center | Quantrexa Prime AI</title>
+<meta name="description" content="Explore Quantrexa Prime AI's privacy, security, transparency and responsible AI principles.">
+<style>
+:root {
+  --bg:#080b18;
+  --panel:#10172a;
+  --panel2:#121d34;
+  --text:#edf3ff;
+  --muted:#9aa9c4;
+  --blue:#63a5ff;
+  --cyan:#42e8e0;
+  --purple:#a58aff;
+  --border:rgba(139,169,255,.17);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse at 15% 5%,#142b50 0%,transparent 38%),
+    radial-gradient(ellipse at 90% 30%,#211747 0%,transparent 35%),
+    var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,Arial,sans-serif;
+  min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.nav{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:17px 7%;
+  background:rgba(8,11,24,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.brand{font-size:19px;font-weight:850;letter-spacing:-.5px}
+.brand span{color:var(--cyan)}
+.nav a{
+  color:var(--muted);font-size:13px;
+  padding:9px 14px;border:1px solid var(--border);
+  border-radius:10px;transition:.25s;
+}
+.nav a:hover{color:white;border-color:var(--cyan);transform:translateY(-2px)}
+.container{width:min(1100px,90%);margin:auto}
+.hero{text-align:center;padding:95px 0 65px}
+.tag{
+  display:inline-flex;gap:8px;align-items:center;
+  padding:8px 14px;border:1px solid rgba(66,232,224,.3);
+  border-radius:50px;color:var(--cyan);
+  background:rgba(66,232,224,.06);font-size:12px;
+  letter-spacing:1px;
+}
+.pulse{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--cyan);box-shadow:0 0 12px var(--cyan);
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+h1{
+  font-size:clamp(38px,7vw,72px);
+  line-height:1.08;letter-spacing:-3px;
+  margin:25px 0 20px;
+}
+.gradient{
+  background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{
+  color:var(--muted);font-size:16px;line-height:1.8;
+  max-width:650px;margin:0 auto;
+}
+.hero-buttons{
+  display:flex;justify-content:center;gap:12px;
+  margin-top:30px;flex-wrap:wrap;
+}
+.btn{
+  border:1px solid rgba(99,165,255,.55);
+  padding:12px 19px;border-radius:12px;
+  color:white;background:rgba(99,165,255,.09);
+  cursor:pointer;transition:.25s;
+}
+.btn:hover{transform:translateY(-3px);background:rgba(99,165,255,.2);box-shadow:0 8px 25px #438aff22}
+.btn.primary{background:linear-gradient(110deg,#246be8,#7252dc);border-color:transparent}
+.section-title{text-align:center;margin:35px 0}
+.section-title h2{font-size:29px;letter-spacing:-1px}
+.section-title p{color:var(--muted);margin-top:10px;font-size:14px}
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:17px;margin:30px 0 75px;
+}
+.card{
+  background:linear-gradient(145deg,rgba(22,33,58,.95),rgba(13,19,36,.96));
+  border:1px solid var(--border);border-radius:19px;
+  padding:25px;transition:.3s;position:relative;overflow:hidden;
+}
+.card:before{
+  content:"";position:absolute;top:0;left:0;width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+  opacity:0;transition:.3s;
+}
+.card:hover{transform:translateY(-6px);border-color:#63a5ff66;box-shadow:0 15px 40px #0005}
+.card:hover:before{opacity:1}
+.icon{
+  width:47px;height:47px;border-radius:14px;
+  display:grid;place-items:center;font-size:23px;
+  background:rgba(99,165,255,.12);margin-bottom:18px;
+}
+.card h3{font-size:17px;margin-bottom:10px}
+.card p{font-size:13px;color:var(--muted);line-height:1.8}
+.card .more{display:inline-block;color:var(--cyan);font-size:12px;margin-top:17px}
+.panel{
+  background:linear-gradient(135deg,#111e37,#111329);
+  border:1px solid var(--border);border-radius:22px;
+  padding:30px;margin:35px 0;
+}
+.panel h2{font-size:23px;margin-bottom:10px}
+.panel>p{color:var(--muted);font-size:14px;line-height:1.8}
+.accordion{margin-top:22px}
+.acc-item{border-bottom:1px solid var(--border)}
+.acc-btn{
+  width:100%;background:none;border:0;color:white;
+  display:flex;justify-content:space-between;align-items:center;
+  text-align:left;padding:18px 0;cursor:pointer;font-weight:650;
+}
+.acc-btn span:last-child{color:var(--cyan);font-size:20px;transition:.2s}
+.acc-content{
+  max-height:0;overflow:hidden;color:var(--muted);
+  font-size:13px;line-height:1.8;transition:max-height .3s ease,padding .3s;
+}
+.acc-item.open .acc-content{max-height:180px;padding:0 0 18px}
+.acc-item.open .acc-btn span:last-child{transform:rotate(45deg)}
+.notice{
+  border-left:3px solid var(--cyan);
+  background:rgba(66,232,224,.055);
+  padding:17px 20px;border-radius:0 12px 12px 0;
+  color:var(--muted);font-size:13px;line-height:1.8;
+  margin:22px 0;
+}
+.notice strong{color:var(--text)}
+.footer{
+  border-top:1px solid var(--border);
+  margin-top:80px;padding:35px 5%;text-align:center;
+  color:var(--muted);font-size:12px;line-height:2;
+}
+.footer strong{color:white}
+.footer a{color:var(--cyan)}
+.reveal{opacity:0;transform:translateY(22px);transition:.65s}
+.reveal.show{opacity:1;transform:translateY(0)}
+@media(max-width:750px){
+  .grid{grid-template-columns:1fr 1fr}
+  .hero{padding:70px 0 45px}
+  h1{letter-spacing:-1.5px}
+  .nav{padding:14px 5%}
+}
+@media(max-width:500px){
+  .grid{grid-template-columns:1fr}
+  .hero p{font-size:14px}
+  .panel{padding:22px}
+  .brand{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand">QUANTREXA <span>PRIME AI</span></div>
+  <a href="https://quantrexa.oneapp.dev/">← Main Website</a>
+</nav>
+
+<main class="container">
+
+  <section class="hero">
+    <div class="tag"><span class="pulse"></span> TRUST & TRANSPARENCY CENTER</div>
+    <h1>Trust begins with<br><span class="gradient">Transparency.</span></h1>
+    <p>
+      Discover the principles behind Quantrexa Prime AI.
+      Learn about our approach to privacy, security,
+      responsible AI and user trust.
+    </p>
+    <div class="hero-buttons">
+      <a class="btn primary" href="#principles">Explore Our Principles ↗</a>
+      <a class="btn" href="#commitment">Our Commitment</a>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="section-title reveal">
+      <h2>Our Trust Principles</h2>
+      <p>The values that guide our platform.</p>
+    </div>
+
+    <div class="grid">
+      <article class="card reveal">
+        <div class="icon">🔐</div>
+        <h3>Privacy</h3>
+        <p>We aim to handle user information responsibly and communicate how data is collected and used.</p>
+        <a class="more" href="#details">Learn about privacy ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">🛡️</div>
+        <h3>Security</h3>
+        <p>We aim to improve platform security and address potential vulnerabilities responsibly.</p>
+        <a class="more" href="#details">Our security approach ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">🤖</div>
+        <h3>Responsible AI</h3>
+        <p>AI is a powerful assistant, but generated information can contain mistakes and should be verified.</p>
+        <a class="more" href="#details">Explore AI principles ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">🔍</div>
+        <h3>Transparency</h3>
+        <p>We aim to communicate product features, limitations and changes clearly.</p>
+        <a class="more" href="#details">Our transparency ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">💬</div>
+        <h3>User Feedback</h3>
+        <p>Feedback and responsible bug reports can help us improve the platform experience.</p>
+        <a class="more" href="#commitment">Our commitment ↗</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="icon">⚖️</div>
+        <h3>Responsible Use</h3>
+        <p>We encourage lawful, ethical and responsible use of all AI and cybersecurity tools.</p>
+        <a class="more" href="#details">Read our principles ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel reveal" id="details">
+    <h2>Understanding Our Approach</h2>
+    <p>Clear information helps users make informed decisions.</p>
+
+    <div class="accordion">
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">
+          How do we approach privacy? <span>+</span>
+        </button>
+        <div class="acc-content">
+          We aim to respect user privacy. For exact information about
+          collected data, retention, sharing and deletion, consult the
+          platform's published Privacy Policy. Do not assume that a
+          feature is private or encrypted unless its implementation
+          explicitly confirms it.
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">
+          How do we approach security? <span>+</span>
+        </button>
+        <div class="acc-content">
+          Security is an ongoing responsibility. We aim to identify
+          weaknesses, improve reliability and handle security concerns
+          responsibly. This page does not claim an independent security
+          audit or certification.
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">
+          Can AI responses always be trusted? <span>+</span>
+        </button>
+        <div class="acc-content">
+          No AI system is guaranteed to be error-free. Verify important
+          information using reliable sources, especially for technical,
+          academic, legal or other consequential decisions.
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">
+          How should cybersecurity tools be used? <span>+</span>
+        </button>
+        <div class="acc-content">
+          Use security tools only on systems you own or have explicit
+          permission to assess. Follow applicable laws and responsible
+          disclosure practices.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel reveal" id="commitment">
+    <h2>Our Commitment to Users</h2>
+    <p>
+      Quantrexa Prime AI aims to build a useful, transparent and
+      responsible AI workspace. We believe trust requires continuous
+      improvement, honest communication and respect for users.
+    </p>
+
+    <div class="notice">
+      <strong>Important transparency note</strong><br>
+      This Trust Center describes our principles and goals.
+      It is not proof of encryption, security certification,
+      independent audits or specific privacy protections.
+      Those claims should only be published after verification.
+    </div>
+
+    <div class="hero-buttons" style="justify-content:flex-start">
+      <a class="btn primary" href="https://quantrexa.oneapp.dev/">Visit Quantrexa ↗</a>
+      <button class="btn" id="shareBtn">Share Trust Center ↗</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <strong>QUANTREXA PRIME AI</strong><br>
+  Built with a commitment to transparency and responsible innovation.<br>
+  Founded by Purav Raj<br>
+  <a href="https://quantrexa.oneapp.dev/">Official Website</a>
+  <br><br>
+  © <span id="year"></span> Quantrexa Prime AI. All rights reserved.
+</footer>
+
+<script>
+// Current year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Interactive accordion
+document.querySelectorAll(".acc-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const item = button.parentElement;
+    const isOpen = item.classList.contains("open");
+
+    document.querySelectorAll(".acc-item").forEach(other => {
+      other.classList.remove("open");
+      other.querySelector(".acc-btn").setAttribute("aria-expanded","false");
+    });
+
+    if (!isOpen) {
+      item.classList.add("open");
+      button.setAttribute("aria-expanded","true");
+    }
+  });
+});
+
+// Reveal animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) {
+      entry.target.classList.add("show");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:0.12});
+
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+// Share feature
+document.getElementById("shareBtn").addEventListener("click", async () => {
+  const shareData = {
+    title: "Quantrexa Prime AI Trust Center",
+    text: "Explore Quantrexa Prime AI's Trust & Transparency Center.",
+    url: window.location.href
+  };
+
+  try {
+    if(navigator.share) {
+      await navigator.share(shareData);
+    } else if(navigator.clipboard) {
+      await navigator.clipboard.writeText(window.location.href);
+      alert("Trust Center link copied!");
+    } else {
+      prompt("Copy this link:", window.location.href);
+    }
+  } catch(error) {
+    if(error.name !== "AbortError") {
+      alert("Unable to share right now.");
+    }
+  }
+});
+</script>
+
+</body>
+</html>
